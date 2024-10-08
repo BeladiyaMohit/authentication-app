@@ -3,7 +3,6 @@
 import Link from 'next/link';
 import { useFormState } from 'react-dom';
 import { auth } from "@/action/auth-action"
-import Image from 'next/image';
 
 
 export default function AuthForm({ mode }) {
@@ -13,7 +12,7 @@ export default function AuthForm({ mode }) {
   return (
     <form id="auth-form" action={formAction}>
       <div>
-        <Image src="/images/auth-icon.jpg" alt="A lock icon" />
+        <img src="/images/auth-icon.jpg" alt="A lock icon" />
       </div>
       <p>
         <label htmlFor="email">Email</label>
