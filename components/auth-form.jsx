@@ -3,16 +3,17 @@
 import Link from 'next/link';
 import { useFormState } from 'react-dom';
 import { auth } from "@/action/auth-action"
+import Image from 'next/image';
 
 
-export default function AuthForm({ mode }: { mode: "login" | "signUp" }) {
-  const [formState, formAction] = useFormState(auth.bind(null, mode), {})
+export default function AuthForm({ mode }) {
+  const [formState, formAction] = useFormState(auth.bind(null, mode), {}) 
 
 
   return (
     <form id="auth-form" action={formAction}>
       <div>
-        <img src="/images/auth-icon.jpg" alt="A lock icon" />
+        <Image src="/images/auth-icon.jpg" alt="A lock icon" />
       </div>
       <p>
         <label htmlFor="email">Email</label>

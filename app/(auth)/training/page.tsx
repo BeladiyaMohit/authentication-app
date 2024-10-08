@@ -1,5 +1,6 @@
 import { verifyAuth } from '@/lib/auth';
 import { getTrainings } from '@/lib/training';
+import Image from 'next/image';
 import { redirect } from 'next/navigation';
 
 export default async function TrainingPage() {
@@ -15,9 +16,9 @@ export default async function TrainingPage() {
     <main>
       <h1>Find your favorite activity</h1>
       <ul id="training-sessions">
-        {trainingSessions.map((training: any) => (
+        {trainingSessions.map((training:{id:string,image:string,title:string,description:string}) => (
           <li key={training.id}>
-            <img src={`/trainings/${training.image}`} alt={training.title} />
+            <Image src={`/trainings/${training.image}`} alt={training.title} />
             <div>
               <h2>{training.title}</h2>
               <p>{training.description}</p>
